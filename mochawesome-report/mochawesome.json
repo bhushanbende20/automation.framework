@@ -2,24 +2,24 @@
   "stats": {
     "suites": 14,
     "tests": 15,
-    "passes": 15,
+    "passes": 2,
     "pending": 0,
-    "failures": 0,
-    "start": "2019-02-05T10:08:34.760Z",
-    "end": "2019-02-05T10:09:20.442Z",
-    "duration": 45682,
+    "failures": 13,
+    "start": "2022-02-08T13:44:00.645Z",
+    "end": "2022-02-08T13:46:35.927Z",
+    "duration": 155282,
     "testsRegistered": 15,
-    "passPercent": 100,
+    "passPercent": 13.3,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "passPercentClass": "success",
+    "passPercentClass": "danger",
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "aa52ad0f-e96d-466b-bc74-70e8f5e46bb9",
+    "uuid": "5f19793b-72a1-4102-816e-9fa004bae13e",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,18 +28,18 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "5d6838bb-cebb-4d0c-aef5-b9f191f3ea67",
+        "uuid": "43f159e0-a78e-4e4b-9618-7ea7188e51cc",
         "title": "Current Weather Data API - Test Suite",
-        "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T1_GetCurrentWeather.js",
+        "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T1_GetCurrentWeather.js",
         "file": "\\specs\\T1_GetCurrentWeather.js",
         "beforeHooks": [],
         "afterHooks": [],
         "tests": [],
         "suites": [
           {
-            "uuid": "f1026631-0c94-4ca3-b724-d4e3e5061dda",
+            "uuid": "21dcbb8f-8782-4a34-b276-9146084707dd",
             "title": "Basic Shakedown Tests",
-            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T1_GetCurrentWeather.js",
+            "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T1_GetCurrentWeather.js",
             "file": "\\specs\\T1_GetCurrentWeather.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -48,36 +48,38 @@
                 "title": "Verify 'Current Weather By GPS Coordinates' Api response is OK",
                 "fullTitle": "Current Weather Data API - Test Suite Basic Shakedown Tests Verify 'Current Weather By GPS Coordinates' Api response is OK",
                 "timedOut": false,
-                "duration": 1416,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 980,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "testData = data.BaseURL+'current/?lat=0&lon=0&key='+data.ApiKey;\n// console.log(\"Running Test for Current Weather By GPS Coordinates \"+testData);\n\ncurrentResponse = await Get_CurrentByGPSCoordinates(testData);\nexpect(currentResponse.statusCode).to.equal(200);\n\ncurrentResponseBody = JSON.parse(currentResponse.body);\n     \nexpect(currentResponseBody.data).to.be.an('array');",
-                "err": {},
+                "err": {
+                  "message": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"",
+                  "estack": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"\n    at new StatusCodeError (node_modules\\request-promise-core\\lib\\errors.js:32:15)\n    at Request.plumbing.callback (node_modules\\request-promise-core\\lib\\plumbing.js:104:33)\n    at Request.RP$callback [as _callback] (node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n    at Request.self.callback (node_modules\\request\\request.js:185:22)\n    at Request.emit (node:events:390:28)\n    at Request.<anonymous> (node_modules\\request\\request.js:1161:10)\n    at Request.emit (node:events:390:28)\n    at IncomingMessage.<anonymous> (node_modules\\request\\request.js:1083:12)\n    at Object.onceWrapper (node:events:509:28)\n    at IncomingMessage.emit (node:events:402:35)\n    at endReadableNT (node:internal/streams/readable:1343:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)"
+                },
                 "isRoot": false,
-                "uuid": "d1b9576c-d8c2-4df5-9ffe-7c943e33d313",
+                "uuid": "f1177529-d0d3-4e2f-a5d8-a80eec65cdc7",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
-            "passes": [
-              "d1b9576c-d8c2-4df5-9ffe-7c943e33d313"
+            "passes": [],
+            "failures": [
+              "f1177529-d0d3-4e2f-a5d8-a80eec65cdc7"
             ],
-            "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 1416,
+            "duration": 980,
             "root": false,
             "rootEmpty": false,
             "_timeout": 30000
           },
           {
-            "uuid": "afd519f7-8d03-40c2-b6db-6facc6be82e8",
+            "uuid": "82a9ad50-7ba0-44d8-95c0-a13374840531",
             "title": "Functional Tests",
-            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T1_GetCurrentWeather.js",
+            "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T1_GetCurrentWeather.js",
             "file": "\\specs\\T1_GetCurrentWeather.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -86,28 +88,30 @@
                 "title": "Verify STATE CODE is displayed in response of 'Current Weather By GPS Coordinates' Api",
                 "fullTitle": "Current Weather Data API - Test Suite Functional Tests Verify STATE CODE is displayed in response of 'Current Weather By GPS Coordinates' Api",
                 "timedOut": false,
-                "duration": 994,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 840,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "testData = data.BaseURL+'current/?lat='+data.Current[2].Lat+'&lon='+data.Current[2].Lon+'&key='+data.ApiKey;\n// console.log(\"Running Test for Current Weather By GPS Coordinates \"+testData);/\n\ncurrentResponse = await Get_CurrentByGPSCoordinates(testData);\nexpect(currentResponse.statusCode).to.equal(200);\n\ncurrentResponseBody = JSON.parse(currentResponse.body);\n\nexpect(currentResponseBody.data[0]).to.include.any.keys( 'state_code');\n\nexpect(currentResponseBody.data[0].state_code).not.to.be.null;",
-                "err": {},
+                "err": {
+                  "message": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"",
+                  "estack": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"\n    at new StatusCodeError (node_modules\\request-promise-core\\lib\\errors.js:32:15)\n    at Request.plumbing.callback (node_modules\\request-promise-core\\lib\\plumbing.js:104:33)\n    at Request.RP$callback [as _callback] (node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n    at Request.self.callback (node_modules\\request\\request.js:185:22)\n    at Request.emit (node:events:390:28)\n    at Request.<anonymous> (node_modules\\request\\request.js:1161:10)\n    at Request.emit (node:events:390:28)\n    at IncomingMessage.<anonymous> (node_modules\\request\\request.js:1083:12)\n    at Object.onceWrapper (node:events:509:28)\n    at IncomingMessage.emit (node:events:402:35)\n    at endReadableNT (node:internal/streams/readable:1343:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)"
+                },
                 "isRoot": false,
-                "uuid": "c9b785ba-17bb-4f50-98b0-c0ff8d358d8f",
+                "uuid": "39ffdfdb-aac9-48d3-ad55-154492af3d56",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
-            "passes": [
-              "c9b785ba-17bb-4f50-98b0-c0ff8d358d8f"
+            "passes": [],
+            "failures": [
+              "39ffdfdb-aac9-48d3-ad55-154492af3d56"
             ],
-            "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 994,
+            "duration": 840,
             "root": false,
             "rootEmpty": false,
             "_timeout": 30000
@@ -123,18 +127,18 @@
         "_timeout": 30000
       },
       {
-        "uuid": "141bf84b-3722-41f9-ad24-520a8d3984e3",
+        "uuid": "66969175-abbb-4a4a-af47-10bbe198c225",
         "title": "Forecast Weather Data API - Test Suite",
-        "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T2_GetForecastWeather.js",
+        "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T2_GetForecastWeather.js",
         "file": "\\specs\\T2_GetForecastWeather.js",
         "beforeHooks": [],
         "afterHooks": [],
         "tests": [],
         "suites": [
           {
-            "uuid": "e91f8cad-8107-410b-9c5c-c51d893c685e",
+            "uuid": "5f8275ed-5e39-46b4-b744-ddb98a6d6740",
             "title": "Basic Shakedown Tests",
-            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T2_GetForecastWeather.js",
+            "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T2_GetForecastWeather.js",
             "file": "\\specs\\T2_GetForecastWeather.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -143,36 +147,38 @@
                 "title": "Verify 'Forecast - 3 Hourly Data' Api response is OK",
                 "fullTitle": "Forecast Weather Data API - Test Suite Basic Shakedown Tests Verify 'Forecast - 3 Hourly Data' Api response is OK",
                 "timedOut": false,
-                "duration": 1222,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 1682,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "testData = data.BaseURL+'forecast/3hourly?postal_code=28546&key='+data.ApiKey;\n// console.log(\"Running Test for Forecast by Postal Code\"+testData);\n\nforecastResponse = await Get_ForecastByPostalCode(testData);\nexpect(forecastResponse.statusCode).to.equal(200);\n\nforecastResponseBody = JSON.parse(forecastResponse.body);\n     \nexpect(forecastResponseBody.data).to.be.an('array');",
-                "err": {},
+                "err": {
+                  "message": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"",
+                  "estack": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"\n    at new StatusCodeError (node_modules\\request-promise-core\\lib\\errors.js:32:15)\n    at Request.plumbing.callback (node_modules\\request-promise-core\\lib\\plumbing.js:104:33)\n    at Request.RP$callback [as _callback] (node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n    at Request.self.callback (node_modules\\request\\request.js:185:22)\n    at Request.emit (node:events:390:28)\n    at Request.<anonymous> (node_modules\\request\\request.js:1161:10)\n    at Request.emit (node:events:390:28)\n    at IncomingMessage.<anonymous> (node_modules\\request\\request.js:1083:12)\n    at Object.onceWrapper (node:events:509:28)\n    at IncomingMessage.emit (node:events:402:35)\n    at endReadableNT (node:internal/streams/readable:1343:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)"
+                },
                 "isRoot": false,
-                "uuid": "b062090f-20cc-44da-a0cc-4e5e5fd52d5e",
+                "uuid": "fa85fb38-bd58-4d06-88d2-9cbaf0393b11",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
-            "passes": [
-              "b062090f-20cc-44da-a0cc-4e5e5fd52d5e"
+            "passes": [],
+            "failures": [
+              "fa85fb38-bd58-4d06-88d2-9cbaf0393b11"
             ],
-            "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 1222,
+            "duration": 1682,
             "root": false,
             "rootEmpty": false,
             "_timeout": 30000
           },
           {
-            "uuid": "e4c681c4-fe12-46c3-8f24-f37e043b7c7a",
+            "uuid": "a7d0519e-ee45-4d9a-bf9c-6a188568b01e",
             "title": "Functional Tests",
-            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T2_GetForecastWeather.js",
+            "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T2_GetForecastWeather.js",
             "file": "\\specs\\T2_GetForecastWeather.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -181,16 +187,18 @@
                 "title": "Verify response of 'Forecast Weather By Postal Code' Api have value of TIMESTAMP UTC",
                 "fullTitle": "Forecast Weather Data API - Test Suite Functional Tests Verify response of 'Forecast Weather By Postal Code' Api have value of TIMESTAMP UTC",
                 "timedOut": false,
-                "duration": 1511,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 698,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "testData = data.BaseURL+'forecast/3hourly?postal_code='+data.Forecast3Hourly[2].Postal_Code+'&key='+data.ApiKey;\n\n// console.log(\"Running Test for Forecast by Postal Code\"+testData);\nforecastResponse = await Get_ForecastByPostalCode(testData);\nexpect(forecastResponse.statusCode).to.equal(200);\n\nforecastResponseBody = JSON.parse(forecastResponse.body);\n\nfor(var i = 0; i < forecastResponseBody.data.length; i++) {\n    var dataObj = forecastResponseBody.data[i];\n\n    expect(dataObj).to.include.any.keys('timestamp_utc');\n    expect(dataObj.timestamp_utc).not.to.be.null;\n    // console.log(\"timestamp_utc = \"+dataObj.timestamp_utc);\n}",
-                "err": {},
+                "err": {
+                  "message": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"",
+                  "estack": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"\n    at new StatusCodeError (node_modules\\request-promise-core\\lib\\errors.js:32:15)\n    at Request.plumbing.callback (node_modules\\request-promise-core\\lib\\plumbing.js:104:33)\n    at Request.RP$callback [as _callback] (node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n    at Request.self.callback (node_modules\\request\\request.js:185:22)\n    at Request.emit (node:events:390:28)\n    at Request.<anonymous> (node_modules\\request\\request.js:1161:10)\n    at Request.emit (node:events:390:28)\n    at IncomingMessage.<anonymous> (node_modules\\request\\request.js:1083:12)\n    at Object.onceWrapper (node:events:509:28)\n    at IncomingMessage.emit (node:events:402:35)\n    at endReadableNT (node:internal/streams/readable:1343:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)"
+                },
                 "isRoot": false,
-                "uuid": "6de92475-80b0-4c5e-b9e6-fa912836bca5",
+                "uuid": "de8d42da-dd15-41ab-a0fd-6a624c60c55e",
                 "isHook": false,
                 "skipped": false
               },
@@ -198,29 +206,31 @@
                 "title": "Verify response of 'Forecast Weather By Postal Code' Api have value of WEATHER",
                 "fullTitle": "Forecast Weather Data API - Test Suite Functional Tests Verify response of 'Forecast Weather By Postal Code' Api have value of WEATHER",
                 "timedOut": false,
-                "duration": 1563,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 697,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
-                "code": "testData = data.BaseURL+'forecast/3hourly?postal_code='+data.Forecast3Hourly[2].Postal_Code+'&key='+data.ApiKey;\nconsole.log(\"Running Test for \"+testData);\n\nforecastResponse = await Get_ForecastByPostalCode(testData);\nexpect(forecastResponse.statusCode).to.equal(200);\n\nforecastResponseBody = JSON.parse(forecastResponse.body);\n\nfor(var i = 0; i < forecastResponseBody.data.length; i++) {\n    var dataObj = forecastResponseBody.data[i];\n\n    expect(dataObj.weather).to.include.any.keys('icon','code','description');\n    \n    expect(dataObj.weather).not.to.be.null;\n    expect(dataObj.weather.icon).not.to.be.null;\n    expect(dataObj.weather.code).not.to.be.null;\n    expect(dataObj.weather.description).not.to.be.null;\n    // console.log(\"weather = \"+dataObj.weather);\n}",
-                "err": {},
+                "code": "testData = data.BaseURL+'forecast/3hourly?postal_code='+data.Forecast3Hourly[2].Postal_Code+'&key='+data.ApiKey;\n// console.log(\"Running Test for \"+testData);\n\nforecastResponse = await Get_ForecastByPostalCode(testData);\nexpect(forecastResponse.statusCode).to.equal(200);\n\nforecastResponseBody = JSON.parse(forecastResponse.body);\n\nfor(var i = 0; i < forecastResponseBody.data.length; i++) {\n    var dataObj = forecastResponseBody.data[i];\n\n    expect(dataObj.weather).to.include.any.keys('icon','code','description');\n    \n    expect(dataObj.weather).not.to.be.null;\n    expect(dataObj.weather.icon).not.to.be.null;\n    expect(dataObj.weather.code).not.to.be.null;\n    expect(dataObj.weather.description).not.to.be.null;\n    // console.log(\"weather = \"+dataObj.weather);\n}",
+                "err": {
+                  "message": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"",
+                  "estack": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"\n    at new StatusCodeError (node_modules\\request-promise-core\\lib\\errors.js:32:15)\n    at Request.plumbing.callback (node_modules\\request-promise-core\\lib\\plumbing.js:104:33)\n    at Request.RP$callback [as _callback] (node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n    at Request.self.callback (node_modules\\request\\request.js:185:22)\n    at Request.emit (node:events:390:28)\n    at Request.<anonymous> (node_modules\\request\\request.js:1161:10)\n    at Request.emit (node:events:390:28)\n    at IncomingMessage.<anonymous> (node_modules\\request\\request.js:1083:12)\n    at Object.onceWrapper (node:events:509:28)\n    at IncomingMessage.emit (node:events:402:35)\n    at endReadableNT (node:internal/streams/readable:1343:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)"
+                },
                 "isRoot": false,
-                "uuid": "9994eb83-cab2-4fb0-92b2-4fa28e1c2eb3",
+                "uuid": "09b747d3-87e2-4107-ac7c-b07ff454cb87",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
-            "passes": [
-              "6de92475-80b0-4c5e-b9e6-fa912836bca5",
-              "9994eb83-cab2-4fb0-92b2-4fa28e1c2eb3"
+            "passes": [],
+            "failures": [
+              "de8d42da-dd15-41ab-a0fd-6a624c60c55e",
+              "09b747d3-87e2-4107-ac7c-b07ff454cb87"
             ],
-            "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 3074,
+            "duration": 1395,
             "root": false,
             "rootEmpty": false,
             "_timeout": 30000
@@ -236,9 +246,9 @@
         "_timeout": 30000
       },
       {
-        "uuid": "3aaa164b-71e3-4a24-a30e-8cda6175e4eb",
+        "uuid": "132df26c-4dc2-429d-b453-f9c335c47dcf",
         "title": "Performance Test Suite",
-        "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T3_PerformanceTest.js",
+        "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T3_PerformanceTest.js",
         "file": "\\specs\\T3_PerformanceTest.js",
         "beforeHooks": [],
         "afterHooks": [],
@@ -247,45 +257,47 @@
             "title": "Verify Response Time less than 3500 ms per API call when both APIs are called 10times",
             "fullTitle": "Performance Test Suite Verify Response Time less than 3500 ms per API call when both APIs are called 10times",
             "timedOut": false,
-            "duration": 27731,
-            "state": "passed",
-            "speed": "slow",
-            "pass": true,
-            "fail": false,
+            "duration": 849,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
             "pending": false,
             "code": "console.log(\"Expected Response Time per Api Request Call = \"+expectedApiResponseTime+\" ms\");\n      \nfor(var i = 0; i < 10; i++) {\n  // console.log(\"Calling APIs in \"+i+\" iteration\")\n  \n  testData1 = data.BaseURL+'current/?lat='+data.Current[i].Lat+'&lon='+data.Current[i].Lon+'&key='+data.ApiKey;\n  testData2 = data.BaseURL+'forecast/3hourly?postal_code='+data.Forecast3Hourly[i].Postal_Code+'&key='+data.ApiKey;\n  currentResponse = await Get_CurrentByGPSCoordinates(testData1);\n  forecastResponse = await Get_ForecastByPostalCode(testData2);\n  expect(currentResponse.statusCode).to.equal(200);  \n  expect(currentResponse.elapsedTime).to.lessThan(expectedApiResponseTime);\n  \n  expect(forecastResponse.statusCode).to.equal(200);\n  expect(forecastResponse.elapsedTime).to.lessThan(expectedApiResponseTime);\n  // console.log(\">>> Response Code of \\'Current Weather By GPS Coordinates\\' Api = \"+currentResponse.statusCode);\n  // console.log(\">>> Response Time of \\'Current Weather By GPS Coordinates\\' Api = \"+currentResponse.elapsedTime);\n  // console.log(\">>> Response Time of \\'Forecast Weather By Postal Code\\' Api = \"+forecastResponse.statusCode);\n  // console.log(\">>> Response Time of \\'Forecast Weather By Postal Code\\' Api = \"+forecastResponse.elapsedTime);\n}",
-            "err": {},
+            "err": {
+              "message": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"",
+              "estack": "StatusCodeError: 403 - \"{\\\"error\\\":\\\"API key not valid, or not yet activated.\\\"}\\n\"\n    at new StatusCodeError (node_modules\\request-promise-core\\lib\\errors.js:32:15)\n    at Request.plumbing.callback (node_modules\\request-promise-core\\lib\\plumbing.js:104:33)\n    at Request.RP$callback [as _callback] (node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n    at Request.self.callback (node_modules\\request\\request.js:185:22)\n    at Request.emit (node:events:390:28)\n    at Request.<anonymous> (node_modules\\request\\request.js:1161:10)\n    at Request.emit (node:events:390:28)\n    at IncomingMessage.<anonymous> (node_modules\\request\\request.js:1083:12)\n    at Object.onceWrapper (node:events:509:28)\n    at IncomingMessage.emit (node:events:402:35)\n    at endReadableNT (node:internal/streams/readable:1343:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)"
+            },
             "isRoot": false,
-            "uuid": "c94e95e1-25fc-41d0-aecd-627a334e50c7",
+            "uuid": "96997030-d5fd-4282-a7c1-5e9198fc0c61",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
-        "passes": [
-          "c94e95e1-25fc-41d0-aecd-627a334e50c7"
+        "passes": [],
+        "failures": [
+          "96997030-d5fd-4282-a7c1-5e9198fc0c61"
         ],
-        "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 27731,
+        "duration": 849,
         "root": false,
         "rootEmpty": false,
         "_timeout": 500000
       },
       {
-        "uuid": "d918b6eb-60ed-4071-b062-d1bb594ef4af",
+        "uuid": "8ff4962b-625a-4204-a195-451f1a17dbce",
         "title": "Rest Countries API - Test Suite",
-        "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T4_GetCountry.js",
+        "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T4_GetCountry.js",
         "file": "\\specs\\T4_GetCountry.js",
         "beforeHooks": [],
         "afterHooks": [],
         "tests": [],
         "suites": [
           {
-            "uuid": "26aa4f78-46d8-4d68-80e2-ee6841967809",
+            "uuid": "3690cf42-410b-4980-ade0-88e86011d90f",
             "title": "Basic Shakedown Tests",
-            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T4_GetCountry.js",
+            "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T4_GetCountry.js",
             "file": "\\specs\\T4_GetCountry.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -294,16 +306,18 @@
                 "title": "Verify 'Name' Api response is OK",
                 "fullTitle": "Rest Countries API - Test Suite Basic Shakedown Tests Verify 'Name' Api response is OK",
                 "timedOut": false,
-                "duration": 617,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 21109,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "test.data.INPUT_NAME = \"Australia\"\nbyName_response = await Get_ByName(test.data);\nexpect(byName_response.status).to.equal(200);\nexpect(byName_response.data).to.be.an('array');",
-                "err": {},
+                "err": {
+                  "message": "Error: connect ETIMEDOUT 15.197.142.173:443",
+                  "estack": "Error: connect ETIMEDOUT 15.197.142.173:443\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)"
+                },
                 "isRoot": false,
-                "uuid": "9c9d3f58-eefc-44a9-842e-be6e952eeb92",
+                "uuid": "30db7a61-608b-45a7-91a5-96c67dd0348b",
                 "isHook": false,
                 "skipped": false
               },
@@ -311,16 +325,18 @@
                 "title": "Verify 'Code' Api response is OK",
                 "fullTitle": "Rest Countries API - Test Suite Basic Shakedown Tests Verify 'Code' Api response is OK",
                 "timedOut": false,
-                "duration": 550,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 21053,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "test.data.INPUT_CODE = \"AU\"\nbyCode_response = await Get_ByCode(test.data);\nexpect(byCode_response.status).to.equal(200);\nexpect(byCode_response.data).to.include.any.keys( 'name', 'topLevelDomain',\n'alpha2Code','alpha3Code','callingCodes','capital','altSpellings','region',\n'subregion','population','demonym','area','nativeName','numericCode','currencies');",
-                "err": {},
+                "err": {
+                  "message": "Error: connect ETIMEDOUT 15.197.142.173:443",
+                  "estack": "Error: connect ETIMEDOUT 15.197.142.173:443\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)"
+                },
                 "isRoot": false,
-                "uuid": "6f682ff0-02a0-4d32-8cbb-e6f0b7a2d4db",
+                "uuid": "aee7f29c-bbee-421d-95ea-dfb7c3e12e0d",
                 "isHook": false,
                 "skipped": false
               },
@@ -328,16 +344,18 @@
                 "title": "Verify 'Capital' Api response is OK",
                 "fullTitle": "Rest Countries API - Test Suite Basic Shakedown Tests Verify 'Capital' Api response is OK",
                 "timedOut": false,
-                "duration": 557,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 21037,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "test.data.INPUT_CAPITAL = \"Canberra\",\nbyCapital_response = await Get_ByCapital(test.data);\nexpect(byCapital_response.status).to.equal(200);\nexpect(byCapital_response.data).to.be.an('array');",
-                "err": {},
+                "err": {
+                  "message": "Error: connect ETIMEDOUT 15.197.142.173:443",
+                  "estack": "Error: connect ETIMEDOUT 15.197.142.173:443\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)"
+                },
                 "isRoot": false,
-                "uuid": "6183af1e-c735-4601-bb26-f0977edcfe57",
+                "uuid": "4c60ae97-a24c-4b42-b1d1-0af3a0cc1990",
                 "isHook": false,
                 "skipped": false
               },
@@ -345,39 +363,41 @@
                 "title": "Verify 'Region' Api response is OK",
                 "fullTitle": "Rest Countries API - Test Suite Basic Shakedown Tests Verify 'Region' Api response is OK",
                 "timedOut": false,
-                "duration": 1273,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 21041,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "test.data.INPUT_REGION = \"Oceania\"\nbyRegion_response = await Get_ByRegion(test.data);\nexpect(byRegion_response.status).to.equal(200);\nexpect(byRegion_response.data).to.be.an('array');",
-                "err": {},
+                "err": {
+                  "message": "Error: connect ETIMEDOUT 15.197.142.173:443",
+                  "estack": "Error: connect ETIMEDOUT 15.197.142.173:443\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)"
+                },
                 "isRoot": false,
-                "uuid": "0d5e3df5-5efb-43c8-871a-c16bc620af95",
+                "uuid": "92c96b35-b85d-46e9-9489-48993e51f058",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
-            "passes": [
-              "9c9d3f58-eefc-44a9-842e-be6e952eeb92",
-              "6f682ff0-02a0-4d32-8cbb-e6f0b7a2d4db",
-              "6183af1e-c735-4601-bb26-f0977edcfe57",
-              "0d5e3df5-5efb-43c8-871a-c16bc620af95"
+            "passes": [],
+            "failures": [
+              "30db7a61-608b-45a7-91a5-96c67dd0348b",
+              "aee7f29c-bbee-421d-95ea-dfb7c3e12e0d",
+              "4c60ae97-a24c-4b42-b1d1-0af3a0cc1990",
+              "92c96b35-b85d-46e9-9489-48993e51f058"
             ],
-            "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 2997,
+            "duration": 84240,
             "root": false,
             "rootEmpty": false,
             "_timeout": 30000
           },
           {
-            "uuid": "a08b897d-1a7e-4dcf-bbb4-9931d2933d80",
+            "uuid": "4ff3577a-516a-42c6-9161-5c81b9dd0f4d",
             "title": "Functional Tests",
-            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T4_GetCountry.js",
+            "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T4_GetCountry.js",
             "file": "\\specs\\T4_GetCountry.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -386,16 +406,18 @@
                 "title": "Verify CAPITAL NAME in 'Name Api' using 'Capital Api'",
                 "fullTitle": "Rest Countries API - Test Suite Functional Tests Verify CAPITAL NAME in 'Name Api' using 'Capital Api'",
                 "timedOut": false,
-                "duration": 2207,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 21036,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "test.data.INPUT_CODE = \"AU\"   //Australia\nbyCode_response = await Get_ByCode(test.data);\n//take name of country + capital from response of CODE api\ntest.data.INPUT_NAME = byCode_response.data.name\ntest.data.INPUT_CAPITAL = byCode_response.data.capital\n//get responses of 'Name api' and 'Capital api'\nbyName_response = await Get_ByName(test.data);\nbyCapital_response = await Get_ByCapital(test.data);\n//expect that both response should have 'Country name' and 'capital'\nexpect(byName_response.data[0]).to.include.any.keys( 'name', 'capital',);\nexpect(byCapital_response.data[0]).to.include.any.keys( 'name', 'capital',);\n//Verify capital_name in 'Name Api' using 'Capital Api'\nexpect(byName_response.data[0].capital).to.equal(byCapital_response.data[0].capital);",
-                "err": {},
+                "err": {
+                  "message": "Error: connect ETIMEDOUT 15.197.142.173:443",
+                  "estack": "Error: connect ETIMEDOUT 15.197.142.173:443\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)"
+                },
                 "isRoot": false,
-                "uuid": "926b3ceb-fbf0-46ba-b775-db5beaa18cb8",
+                "uuid": "75983aff-338c-428b-a6ae-f249a29b0367",
                 "isHook": false,
                 "skipped": false
               },
@@ -403,16 +425,18 @@
                 "title": "Verify POPULATION value is same in 'Name + Code + Capital' Api responses",
                 "fullTitle": "Rest Countries API - Test Suite Functional Tests Verify POPULATION value is same in 'Name + Code + Capital' Api responses",
                 "timedOut": false,
-                "duration": 2228,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 21032,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "test.data.INPUT_CODE = \"CN\"  //CHINA\nbyCode_response = await Get_ByCode(test.data);\n//take name of country + capital from response of CODE api\ntest.data.INPUT_NAME = byCode_response.data.name\ntest.data.INPUT_CAPITAL = byCode_response.data.capital\n//get responses of 'Name api' and 'Capital api'\nbyName_response = await Get_ByName(test.data);\nbyCapital_response = await Get_ByCapital(test.data);\n//expect that both response should have 'Country name' and 'capital'\nexpect(byName_response.data[0]).to.include.any.keys( 'population');\nexpect(byCapital_response.data[0]).to.include.any.keys( 'population',);\n//Verify Population value is same in Name + Code + Capital Api responses\nexpect(byCode_response.data.population).to.equal(byName_response.data[0].population);\nexpect(byCode_response.data.population).to.equal(byCapital_response.data[0].population);\nexpect(byName_response.data[0].population).to.equal(byCapital_response.data[0].population);",
-                "err": {},
+                "err": {
+                  "message": "Error: connect ETIMEDOUT 15.197.142.173:443",
+                  "estack": "Error: connect ETIMEDOUT 15.197.142.173:443\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)"
+                },
                 "isRoot": false,
-                "uuid": "46e521aa-6e5b-4585-a766-7bf08ea1d90a",
+                "uuid": "a9fceede-4541-4e61-838c-63ee7a255929",
                 "isHook": false,
                 "skipped": false
               },
@@ -420,30 +444,32 @@
                 "title": "Verify AREA value is same in 'Name + Code + Capital' Api responses",
                 "fullTitle": "Rest Countries API - Test Suite Functional Tests Verify AREA value is same in 'Name + Code + Capital' Api responses",
                 "timedOut": false,
-                "duration": 1787,
-                "state": "passed",
-                "speed": "slow",
-                "pass": true,
-                "fail": false,
+                "duration": 21032,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
                 "pending": false,
                 "code": "test.data.INPUT_CODE = \"PK\"  //PAKISTAN\nbyCode_response = await Get_ByCode(test.data);\n//take name of country + capital from response of CODE api\ntest.data.INPUT_NAME = byCode_response.data.name\ntest.data.INPUT_CAPITAL = byCode_response.data.capital\n//get responses of 'Name api' and 'Capital api'\nbyName_response = await Get_ByName(test.data);\nbyCapital_response = await Get_ByCapital(test.data);\n//expect that both response should have 'Country name' and 'capital'\nexpect(byName_response.data[0]).to.include.any.keys( 'area');\nexpect(byCapital_response.data[0]).to.include.any.keys( 'area',);\n//Verify AREA value is same in Name + Code + Capital Api responses\nexpect(byCode_response.data.area).to.equal(byName_response.data[0].area);\nexpect(byCode_response.data.area).to.equal(byCapital_response.data[0].area);\nexpect(byName_response.data[0].area).to.equal(byCapital_response.data[0].area);",
-                "err": {},
+                "err": {
+                  "message": "Error: connect ETIMEDOUT 15.197.142.173:443",
+                  "estack": "Error: connect ETIMEDOUT 15.197.142.173:443\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)"
+                },
                 "isRoot": false,
-                "uuid": "ffdd59a2-8fbc-4740-a96b-6f38f7e04678",
+                "uuid": "254108e1-d8a6-4bf1-a81a-292fc38481ee",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
-            "passes": [
-              "926b3ceb-fbf0-46ba-b775-db5beaa18cb8",
-              "46e521aa-6e5b-4585-a766-7bf08ea1d90a",
-              "ffdd59a2-8fbc-4740-a96b-6f38f7e04678"
+            "passes": [],
+            "failures": [
+              "75983aff-338c-428b-a6ae-f249a29b0367",
+              "a9fceede-4541-4e61-838c-63ee7a255929",
+              "254108e1-d8a6-4bf1-a81a-292fc38481ee"
             ],
-            "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 6222,
+            "duration": 63100,
             "root": false,
             "rootEmpty": false,
             "_timeout": 30000
@@ -459,18 +485,18 @@
         "_timeout": 30000
       },
       {
-        "uuid": "c03accb2-2953-4d26-97df-f671046fe340",
+        "uuid": "db87c8fd-1a80-4d4a-abd2-62c9cedd90c8",
         "title": "Postman Echo API Suite - POST",
-        "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T5_echoPost.js",
+        "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T5_echoPost.js",
         "file": "\\specs\\T5_echoPost.js",
         "beforeHooks": [],
         "afterHooks": [],
         "tests": [],
         "suites": [
           {
-            "uuid": "c0edfdc9-7c3f-4c21-b63e-bf2bdd394393",
+            "uuid": "3adf9f3a-d3ce-40f1-a2ed-ae824e30e1db",
             "title": "Basic Test",
-            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T5_echoPost.js",
+            "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T5_echoPost.js",
             "file": "\\specs\\T5_echoPost.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -479,7 +505,7 @@
                 "title": "Test 1",
                 "fullTitle": "Postman Echo API Suite - POST Basic Test Test 1",
                 "timedOut": false,
-                "duration": 1130,
+                "duration": 1228,
                 "state": "passed",
                 "speed": "slow",
                 "pass": true,
@@ -488,19 +514,19 @@
                 "code": "let responseOut = await postmanPost(test.data);\nexpect(responseOut.url).to.equal(test.data.URL);",
                 "err": {},
                 "isRoot": false,
-                "uuid": "05407e26-79c9-45dc-ba75-b7f8a6f1678c",
+                "uuid": "55c69516-d84c-4763-93b9-cdda19215142",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "05407e26-79c9-45dc-ba75-b7f8a6f1678c"
+              "55c69516-d84c-4763-93b9-cdda19215142"
             ],
             "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 1130,
+            "duration": 1228,
             "root": false,
             "rootEmpty": false,
             "_timeout": 5000
@@ -516,18 +542,18 @@
         "_timeout": 5000
       },
       {
-        "uuid": "14e34b0c-a249-4f9f-a64c-07e344ddceb6",
+        "uuid": "6edd56ee-6b67-4a95-9f44-6374e6501287",
         "title": "Postman Echo API Suite - GET",
-        "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T6_echoGet.js",
+        "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T6_echoGet.js",
         "file": "\\specs\\T6_echoGet.js",
         "beforeHooks": [],
         "afterHooks": [],
         "tests": [],
         "suites": [
           {
-            "uuid": "8f0f2f90-2c87-41a3-994b-1bb3d7cf8a9d",
+            "uuid": "d8aa2959-d48b-47d6-b78a-ab2a25279cd8",
             "title": "Basic Test",
-            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\ApiJavaScriptAutomation\\specs\\T6_echoGet.js",
+            "fullFile": "F:\\2022 Automation Test\\API_TestAutomation\\automation.framework\\specs\\T6_echoGet.js",
             "file": "\\specs\\T6_echoGet.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -536,7 +562,7 @@
                 "title": "Test 1",
                 "fullTitle": "Postman Echo API Suite - GET Basic Test Test 1",
                 "timedOut": false,
-                "duration": 768,
+                "duration": 884,
                 "state": "passed",
                 "speed": "slow",
                 "pass": true,
@@ -545,19 +571,19 @@
                 "code": "let responseOut = await postmanGet(test.data);\nexpect(responseOut.url).to.equal(test.data.URL);",
                 "err": {},
                 "isRoot": false,
-                "uuid": "3a0dd179-4b7b-4cb6-94ee-71aaacdfbd11",
+                "uuid": "e31ae6dd-d50c-45a5-be88-f4ec1baee0c3",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "3a0dd179-4b7b-4cb6-94ee-71aaacdfbd11"
+              "e31ae6dd-d50c-45a5-be88-f4ec1baee0c3"
             ],
             "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 768,
+            "duration": 884,
             "root": false,
             "rootEmpty": false,
             "_timeout": 5000
@@ -582,5 +608,5 @@
     "rootEmpty": true,
     "_timeout": 2000
   },
-  "copyrightYear": 2019
+  "copyrightYear": 2022
 }
